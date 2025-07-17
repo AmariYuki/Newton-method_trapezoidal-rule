@@ -153,7 +153,8 @@ X( 3 ) = -9.572191932508134e-05
 X( 4 ) = 2.923566201412306e-13
 It converged
 ```
-<img width="711" height="470" alt="result_newton-method" src="https://github.com/user-attachments/assets/7caa5e70-378c-4e6d-a902-59032ffffab7" />
+<img src="Git_fig/Newton-method_sine=0_result.png" alt="ニュートン法の結果" width="600">
+
 
 
 </details>
