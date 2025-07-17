@@ -15,7 +15,10 @@
 
 $\to$ $f(x)=0$の解 $x=c$は、 $f(a)f(b)<0$ を満たす区間 $(a,b)$ の中に少なくとも1つ存在する。
 
-![二分法](Test_Newton-method2/Git_figs/二分法.jpg)
+
+<img src="Git_fig/二分法.jpg" alt="二分法" width="400">
+
+
 
 
 ### 1-2. ニュートン法 (微分を用いた数値解法)
