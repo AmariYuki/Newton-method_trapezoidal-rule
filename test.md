@@ -72,6 +72,7 @@ else:
 ### 1-2. ニュートン法 (微分を用いた数値解法)
 
 
+<img src="Git_fig/Newton-method_原理.png" alt="Newton-method_原理" width="400">
 
 
 #### $\sin x = 0$ をニュートン法を用いて解く。
