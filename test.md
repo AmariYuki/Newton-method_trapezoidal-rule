@@ -29,36 +29,43 @@ $f(x)=0$ の解は、 $f(a)f(b)<0$ を満たす区間 $(a,b)$ の中に少なく
 二分法を使って、 $\sin(x) =0$ の解を求めてみよう。
 
 ```python
-import math
+import math  # 数学関数（sin, piなど）を使うためにmathモジュールをインポート
+
+# 解を求めたい関数 f(x) = sin(x)
 def f(x):
     return math.sin(x)
 
-a = - math.pi / 6.0
+# 解を探す初期区間 [a, b]
+a = - math.pi / 6.0  
 b = math.pi / 4.0
-IMAX = 50
-EPS = 1e-6
 
+IMAX = 50     # 最大反復回数
+EPS = 1e-6    # 許容誤差（収束判定のしきい値）
+
+# 初期区間で f(a) と f(b) の符号が異なるか確認
 if f(a) * f(b) >= 0:
-    print("この区間には解がありません")
+    print("この区間には解がありません")  # 解の存在が保証されない場合
 else:
-  for i in range(IMAX):
-        c = (a + b) / 2
-        print(i+1,"c=", c)
+    # 収束するか、最大反復数に達するまで繰り返す
+    for i in range(IMAX):
+        c = (a + b) / 2  # 区間の中点を計算
+        print(i + 1, "c =", c)  # 何回目かと中点の値を出力
 
         if f(c) == 0:
-          break
+            break  # 解がちょうど見つかった場合はループ終了
         elif f(a) * f(c) < 0:
-          b = c
+            b = c  # 解は [a, c] にある → 右端を更新
         else:
-          a = c
+            a = c  # 解は [c, b] にある → 左端を更新
 
-        if b-a<EPS:
-            break
-    
-  if i+1>=IMAX:
-      print("It did not converged.")
-  else:
-      print("It converged.")
+        if b - a < EPS:
+            break  # 区間幅が十分小さくなったら終了（収束とみなす）
+
+    # 収束したかどうかを出力
+    if i + 1 >= IMAX:
+        print("It did not converged.")  # 最大反復数に達しても収束しなかった
+    else:
+        print("It converged.")  # 収束した
 ```
 
 
