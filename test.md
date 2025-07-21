@@ -214,6 +214,12 @@ plt.show()
 
 <img src="Git_fig/区分求積.png" alt="区分求積" width="800">
 
+定積分 $\displaystyle{\int_a^b} f(x)dx$ は、関数 $y=f(x)$ と $x$ 軸および2直線 $x=a, x=b$ で囲まれた図形の面積を表す。
+この図形は、幅 $\Delta x = (b-a)/N$ 、高さ $f(x_{k-1})$ 　 $(k=1,2,...N)$ の帯の集まりであると近似できる。
+よって、その面積 $S$ は 
+```math
+S \approx \sum_{k=1}^N f(x_{k-1}) \Delta x =  \sum_{k=1}^N f(x_{k-1}) \frac{b-a}{N}
+```
 
 ### 2-2. 台形公式
 
