@@ -215,10 +215,10 @@ plt.show()
 <img src="Git_fig/区分求積.png" alt="区分求積" width="800">
 
 定積分 $\displaystyle{\int_a^b} f(x)dx$ は、関数 $y=f(x)$ と $x$ 軸および2直線 $x=a, x=b$ で囲まれた図形の面積を表す。
-この図形は、幅 $\Delta x = (b-a)/N$ 、高さ $f(x_{k-1})$ 　 $(k=1,2,...N)$ の帯の集まりであると近似できる。
+この図形は、幅 $h = (b-a)/N$ 、高さ $f(x_{k-1})$ 　 $(k=1,2,...N)$ の帯の集まりであると近似できる。
 よって、その面積 $S$ は 
 ```math
-S \approx \sum_{k=1}^N f(x_{k-1}) \Delta x =  \sum_{k=1}^N f(x_{k-1}) \frac{b-a}{N}
+S \approx \sum_{k=1}^N f(x_{k-1}) h =  \sum_{k=1}^N f(x_{k-1}) \frac{b-a}{N}
 ```
 と近似できる。
 
@@ -263,6 +263,12 @@ print(S)  # 結果を出力
 
 <img src="Git_fig/台形公式.png" alt="台形公式" width="400">
 
-
+通常の区分求積法は長方形を用いて近似を行うが、台形を用いて近似した方が精度が良い。 
+$k$ 番目の台形の面積 $S_k$ は、 $S_k = \dfrac{1}{2}\left(f(x_{k-1}) + f(x_k)\right) h $ となる。
+したがって、台形で近似した場合の面積は、
+```math
+S=\sum_{k=1}^N S_k = \frac{h}{2}\sum_{k=1}^N \left(f(x_{k-1}) + f(x_k)\right)\\
+=\frac{h}{2}\left\{f(x_0) + 2 \sum_{k=1}^{N-1}f(x_k) + f(x_N) \right\}
+```
 
 
