@@ -227,7 +227,7 @@ S = \sum_{k=1}^N f(x_{k-1}) h =  \sum_{k=1}^N f(x_{k-1}) \frac{b-a}{N}
 #### $\displaystyle{\int_0^1 \sqrt{1-x^2} dx} = \pi/4 \approx 0.785375$ を区分求積法を用いて求める。
 
 ```python
-import numpy as np  # 数値計算ライブラリ。mathよりもベクトル演算などが便利
+import numpy as np 
 
 # 被積分関数 f(x) = sqrt(1 - x^2)
 def f(x):
@@ -241,7 +241,7 @@ h = (B - A) / N  # 1つの小区間の幅 h
 S = 0.0   # 積分値の初期化
 
 # 長方形（左端）の和を求める
-for k in range(1, N+1): # k = 1,2,...,N までのループ
+for k in range(1, N+1): # k = 1,2,...,N のループ
   S += f(A + h * (k - 1))  # 各区間の左端の f(x) を足し合わせる
 
 S = S * h  # 全体を区間幅 h で掛けることで、積分の近似値を得る
@@ -251,7 +251,7 @@ print(S)  # 結果を出力
 <details><summary>結果</summary>
  
 ```
-0.7905871780261987
+0.7945671277746251
 ```
 
 </details>
@@ -275,10 +275,10 @@ S=\sum_{k=1}^N S_k = \frac{h}{2}\sum_{k=1}^N \left(f(x_{k-1}) + f(x_k)\right)\\
 
 <details><summary>Pythonコード</summary>
  
-#### 区分求積のときと同様、$\displaystyle{\int_0^1 \sqrt{1-x^2} dx} = \pi/4 \approx 0.785375$ を区分求積法を用いて求める。
+#### 区分求積のときと同様、 $\displaystyle{\int_0^1 \sqrt{1-x^2} dx} = \pi/4 \approx 0.785375$ を区分求積法を用いて求める。
 
 ```python
-import numpy as np  # 数値計算ライブラリ。mathよりもベクトル演算などが便利
+import numpy as np  
 
 # 被積分関数 f(x) = sqrt(1 - x^2)
 def f(x):
@@ -292,7 +292,7 @@ h = (B - A) / N  # 1つの小区間の幅 h
 S = 0.0   # 積分値の初期化
 
 # 長方形（左端）の和を求める
-for k in range(1, N):　# k = 1,2,...,N-1 までのループ
+for k in range(1, N):　# k = 1,2,...,N-1 のループ
   S += 2.0 * f(A + h * k)
 
 S = f(A) + S + f(B)
@@ -303,7 +303,7 @@ print(S)  # 結果を出力
 <details><summary>結果</summary>
  
 ```
-0.7905871780261987
+0.784567127774625
 ```
 
 </details>
