@@ -76,7 +76,7 @@ else:
 
 関数 $f(x)=0$ を $x=x_n$ において、線形近似またはテイラー展開すると、 $f(x)\approx f(x_n) + f^\prime (x_n)(x-x_n)$ と書ける。そこで、 $f(x)=0$ の代わりに、"近似式の右辺"=0を解くと、 $x=x_n-\dfrac{f(x_n)}{f'(x_n)}$ となる。
 
-適切な初期値 $x_0$ から出発して、 $x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)}$ にしたがって数列 $\{x_n\}$ を定義すると、数列 $\{x_n\}$ は $f(x)=0$ の解へと収束する。これをニュートン法と呼ぶ。
+適切な初期値 $x_0$ から出発して、 $x_{n+1}=x_n-\dfrac{f(x_n)}{f'(x_n)}$ にしたがって数列 $\lbrace x_n \rbrace$ を定義すると、数列 $\lbrace x_n \rbrace$ は $f(x)=0$ の解へと収束する。これをニュートン法と呼ぶ。
 
 <img src="Git_fig/Newton-method_原理.png" alt="Newton-method_原理" width="400">
 
