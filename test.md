@@ -212,9 +212,12 @@ plt.show()
 
 ### 2-1. 区分求積法
 
+<img src="Git_fig/区分求積.png" alt="区分求積" width="800">
 
 
 ### 2-2. 台形公式
+
+<img src="Git_fig/台形公式.png" alt="台形公式" width="400">
 
 
 
