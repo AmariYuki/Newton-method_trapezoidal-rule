@@ -241,7 +241,7 @@ h = (B - A) / N  # 1つの小区間の幅 h
 S = 0.0   # 積分値の初期化
 
 # 長方形（左端）の和を求める
-for k in range(1, N):
+for k in range(1, N+1): # k = 1,2,...,N までのループ
   S += f(A + h * (k - 1))  # 各区間の左端の f(x) を足し合わせる
 
 S = S * h  # 全体を区間幅 h で掛けることで、積分の近似値を得る
@@ -270,5 +270,42 @@ $k$ 番目の台形の面積 $S_k$ は、 $S_k = \frac{1}{2}\left(f(x_{k-1}) + f
 S=\sum_{k=1}^N S_k = \frac{h}{2}\sum_{k=1}^N \left(f(x_{k-1}) + f(x_k)\right)\\
 =\frac{h}{2}\left\{f(x_0) + 2 \sum_{k=1}^{N-1}f(x_k) + f(x_N) \right\}
 ```
+となる。これを台数公式と呼ぶ。
 
 
+<details><summary>Pythonコード</summary>
+ 
+#### 区分求積のときと同様、$\displaystyle{\int_0^1 \sqrt{1-x^2} dx} = \pi/4 \approx 0.785375$ を区分求積法を用いて求める。
+
+```python
+import numpy as np  # 数値計算ライブラリ。mathよりもベクトル演算などが便利
+
+# 被積分関数 f(x) = sqrt(1 - x^2)
+def f(x):
+  return np.sqrt(1 - x**2)
+
+A = 0.0   # 積分区間の左端（x = 0）
+B = 1.0   # 積分区間の右端（x = 1）
+N = 50    # 分割数（区間を N 個に分ける）
+h = (B - A) / N  # 1つの小区間の幅 h
+
+S = 0.0   # 積分値の初期化
+
+# 長方形（左端）の和を求める
+for k in range(1, N):　# k = 1,2,...,N-1 までのループ
+  S += 2.0 * f(A + h * k)
+
+S = f(A) + S + f(B)
+S = S * h / 2.0
+
+print(S)  # 結果を出力
+```
+<details><summary>結果</summary>
+ 
+```
+0.7905871780261987
+```
+
+</details>
+
+</details>
