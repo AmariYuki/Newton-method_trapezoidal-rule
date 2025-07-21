@@ -69,6 +69,35 @@ else:
     else:
         print("It converged.")  # 収束した
 ```
+
+<details><summary>結果</summary>
+  
+```
+1 c = 0.13089969389957473
+2 c = -0.19634954084936204
+3 c = -0.032724923474893655
+4 c = 0.04908738521234054
+5 c = 0.008181230868723442
+6 c = -0.012271846303085107
+7 c = -0.0020453077171808326
+8 c = 0.0030679615757713045
+9 c = 0.0005113269292952359
+10 c = -0.0007669903939427984
+11 c = -0.00012783173232378122
+12 c = 0.00019174759848572735
+13 c = 3.195793308097306e-05
+14 c = -4.793689962140408e-05
+15 c = -7.98948327021551e-06
+16 c = 1.1984224905378776e-05
+17 c = 1.997370817581633e-06
+18 c = -2.9960562263169384e-06
+19 c = -4.993427043676527e-07
+20 c = 7.490140566069902e-07
+21 c = 1.2483567611966874e-07
+It converged.
+```
+</details>
+
 </details>
 
 
@@ -96,7 +125,7 @@ def f(X):
 def df(X):
     return np.cos(X)
 
-X0 = 1.0       # 初期値（近くに解 π ≈ 3.14159 がある）
+X0 = 1.0       # 初期値
 EPS = 1e-7     # 許容誤差（収束判定用）
 IMAX = 50      # 最大反復回数（収束しないときの打ち切り）
 
@@ -148,11 +177,11 @@ plt.plot(x, y, label='f(X) = sin(X)')              # 関数のグラフ
 plt.axhline(0, color='gray', linestyle='--')       # x軸（y=0）
 
 # 反復点を赤い点と線で表示
-plt.plot(X_vals, [math.sin(x) for x in X_vals], 'ro-', label='Newton steps')
+plt.plot(X_vals, [np.sin(x) for x in X_vals], 'ro-', label='Newton steps')
 
 # 各ステップ番号を点のそばに表示（文字を少し上にずらして見やすく）
 for idx, x_val in enumerate(X_vals):
-    plt.text(x_val, math.sin(x_val) + 0.1, f"x {idx}", fontsize=9, ha='center')
+    plt.text(x_val, np.sin(x_val) + 0.1, f"x{idx}", fontsize=9, ha='center')
 
 # タイトルとラベル設定
 plt.title('Newton Method for f(X) = sin(X)')
