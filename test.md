@@ -216,7 +216,7 @@ plt.show()
 
 定積分 $\displaystyle{\int_a^b} f(x)dx$ は、関数 $y=f(x)$ と $x$ 軸および2直線 $x=a, x=b$ で囲まれた図形の面積を表す。
 この図形は、幅 $h = (b-a)/N$ 、高さ $f(x_{k-1})$ 　 $(k=1,2,...N)$ の帯の集まりであると近似できる。
-よって、定積分$\displaystyle{\int_a^b} f(x)dx$ は、帯の面積の総和
+よって、定積分 $\displaystyle{\int_a^b} f(x)dx$ は、帯の面積の総和
 ```math
 S = \sum_{k=1}^N f(x_{k-1}) h =  \sum_{k=1}^N f(x_{k-1}) \frac{b-a}{N}
 ```
