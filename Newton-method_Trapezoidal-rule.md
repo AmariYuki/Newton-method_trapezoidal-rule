@@ -292,7 +292,7 @@ h = (B - A) / N  # 1つの小区間の幅 h
 S = 0.0   # 積分値の初期化
 
 # 長方形（左端）の和を求める
-for k in range(1, N):　# k = 1,2,...,N-1 のループ
+for k in range(1, N): # k = 1,2,...,N-1 のループ
   S += 2.0 * f(A + h * k)
 
 S = f(A) + S + f(B)
@@ -309,3 +309,6 @@ print(S)  # 結果を出力
 </details>
 
 </details>
+
+
+
